@@ -1,7 +1,7 @@
 name: Working Dirs & Shells
 on: [push]
 jobs:
-    display-wd-info:
+    display-ubuntu-info:
         runs-on: ubuntu-latest
         steps:
             - name: Display Working Directory and list files
@@ -11,8 +11,7 @@ jobs:
                     echo $GITHUB_SHA
                     echo $GITHUB_REPOSITORY
                     echo $GITHUB_WORKSPACE
-
-    display-wd-info:
+    display-windows-info:
         runs-on: windows-latest
         steps:
             - name: Display Working Directory and list files
