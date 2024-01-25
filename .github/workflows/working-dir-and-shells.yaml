@@ -9,6 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Display Working Directory and list files
+              working-directory: /home/runner
               run: |
                     pwd
                     ls -a
