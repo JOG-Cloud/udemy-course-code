@@ -1,10 +1,5 @@
 name: Repsitory Events
-on: 
-    push:
-    pull_request:
-        types: [opened, assigned, reopened,synchronize]
-    issues:
-        types: [opened]
+on: [push, pull_request, issues]
 jobs:
     checkout-test:
         runs-on: ubuntu-latest
