@@ -1,9 +1,42 @@
 name: Manually triggered
 on:
   workflow_dispatch:
+    inputs:
+      string:
+        type: string
+        required: true
+        description: 'A string'
+        default: 'Default value'
+      number:
+        type: number
+        description: 'A number'
+        default: 42
+      option:
+        type: choice
+        required: true
+        description: 'A choice'
+        default: 'Option 3'
+        options:
+          - 'Option 1'
+          - 'Option 2'
+          - 'Option 3'
+      boolean:
+        type: boolean
+        required: false
+        description: 'A boolean'
+      environment:
+        type: environment
+        required: true
+        description: 'An environment'
 
 jobs:
   log-info:
     runs-on: ubuntu-latest
     steps:
       - run: echo $GITHUB_REF
+      - run: |
+          echo "String: ${{ github.event.inputs.string }}"
+          echo "Number: ${{ github.event.inputs.number }}"
+          echo "Option: ${{ github.event.inputs.option }}"
+          echo "Boolean: ${{ github.event.inputs.boolean }}"
+          echo "Environment: ${{ github.event.inputs.environment }}"
